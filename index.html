@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de Smart TVs — Melhores Ofertas</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #13131a;
+    --surface2: #1c1c27;
+    --border: #2a2a3a;
+    --accent: #ffe000;
+    --accent2: #ff6b35;
+    --text: #f0f0f5;
+    --muted: #888899;
+    --green: #00d68f;
+    --red: #ff4d4d;
+    --pix: #32bcad;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%; transform: translateX(-50%);
+    width: 500px; height: 200px;
+    background: radial-gradient(ellipse, rgba(255,224,0,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #000;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 16px;
+  }
+
+  header h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 5vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+
+  header h1 span { color: var(--accent); }
+
+  header p {
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  /* LAYOUT */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 56px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-header .inch-badge {
+    background: var(--accent);
+    color: #000;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .section-header .count {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  /* CARD */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 40px rgba(255,224,0,0.08);
+  }
+
+  .card-img {
+    background: #fff;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-img img {
+    max-height: 160px;
+    max-width: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover .card-img img {
+    transform: scale(1.04);
+  }
+
+  .discount-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--red);
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .coupon-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--accent2);
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .card-body {
+    padding: 18px 20px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    color: var(--text);
+    flex: 1;
+  }
+
+  .prices {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .price-de {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: line-through;
+  }
+
+  .price-por {
+    font-size: 22px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .price-por small {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .price-pix {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(50,188,173,0.08);
+    border: 1px solid rgba(50,188,173,0.2);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .price-pix .pix-label {
+    background: var(--pix);
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+
+  .price-pix .pix-val {
+    color: var(--pix);
+    font-weight: 600;
+  }
+
+  .price-pix .pix-off {
+    color: var(--green);
+    font-size: 12px;
+  }
+
+  .price-cupom {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,107,53,0.08);
+    border: 1px solid rgba(255,107,53,0.2);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .price-cupom .cupom-label {
+    background: var(--accent2);
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+
+  .price-cupom .cupom-val {
+    color: var(--accent2);
+    font-weight: 600;
+  }
+
+  .price-cupom .cupom-note {
+    color: var(--muted);
+    font-size: 11px;
+    margin-left: auto;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--accent);
+    color: #000;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 16px;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+
+  .btn:hover {
+    background: #ffd000;
+    transform: scale(1.02);
+  }
+
+  /* KIT card accent */
+  .card.kit {
+    border-color: rgba(255,107,53,0.3);
+  }
+  .card.kit .card-img { background: #1a1a2e; }
+  .card.kit .btn { background: var(--accent2); color: #fff; }
+  .card.kit .btn:hover { background: #ff5520; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 32px 24px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+    header { padding: 32px 16px 28px; }
+    main { padding: 32px 14px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-badge">🔥 Ofertas Especiais</div>
+  <h1>Catálogo de<br><span>Smart TVs</span></h1>
+  <p>Melhores preços • Ordenado por polegadas • Com cupons aplicados</p>
+</header>
+
+<main>
+
+  <!-- 32'' -->
+  <div class="section">
+    <div class="section-header">
+      <span class="inch-badge">32''</span>
+      <span class="count">1 produto</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_668507-MLA108744768802_032026-O.webp" alt="Philco 32" loading="lazy">
+          <span class="discount-badge">-34%</span>
+          <span class="coupon-badge">CUPOM 5%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Smart TV Philco 32'' DLED Full HD Roku TV</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 1.199,00</div>
+            <div class="price-por">R$ 789,00 <small>ou 18x de R$ 43,83</small></div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 749,55</span>
+              <span class="cupom-note">5% OFF</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/smart-tv-32-philco-roku-tv-dolby-audio-hdr10-p32crb/p/MLB66055148" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 43'' -->
+  <div class="section">
+    <div class="section-header">
+      <span class="inch-badge">43''</span>
+      <span class="count">1 produto</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_693897-MLA103757458709_012026-O.webp" alt="AOC 43" loading="lazy">
+          <span class="coupon-badge">CUPOM 10%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Smart TV AOC 43'' LED Full HD Roku TV</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 1.509,00</div>
+            <div class="price-por">R$ 1.509,00 <small>ou 18x de R$ 83,83</small></div>
+            <div class="price-pix">
+              <span class="pix-label">PIX</span>
+              <span class="pix-val">R$ 1.418,46</span>
+              <span class="pix-off">-6%</span>
+            </div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 1.267,56</span>
+              <span class="cupom-note">10% OFF</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/smart-tv-43-aoc-led-roku-full-hd-wi-fi-60hz-hdmi-usb-43s515578g/p/MLB59090080" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 50'' -->
+  <div class="section">
+    <div class="section-header">
+      <span class="inch-badge">50''</span>
+      <span class="count">2 produtos</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_739445-MLA106908065058_022026-O.webp" alt="TCL 50" loading="lazy">
+          <span class="discount-badge">-28%</span>
+          <span class="coupon-badge">CUPOM 5%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Smart TV TCL 50'' QLED 4K Google TV</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 2.699,00</div>
+            <div class="price-por">R$ 1.998,00 <small>ou 18x de R$ 111,00</small></div>
+            <div class="price-pix">
+              <span class="pix-label">PIX</span>
+              <span class="pix-val">R$ 1.938,06</span>
+              <span class="pix-off">-3%</span>
+            </div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 1.840,16</span>
+              <span class="cupom-note">5% OFF</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/smart-tv-tcl-50-polegadas-qled-4k-p7k-wifi-bluetooth-google-tv-hdr10-dolby-atmos-dolby-vision-50p7k/p/MLB48957057" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_848609-MLA107587864347_022026-O.webp" alt="Philips 50" loading="lazy">
+          <span class="coupon-badge">CUPOM 10%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Smart TV Philips 50'' 4K UHD</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 1.999,00</div>
+            <div class="price-por">R$ 1.999,00 <small>ou 18x de R$ 111,06</small></div>
+            <div class="price-pix">
+              <span class="pix-label">PIX</span>
+              <span class="pix-val">R$ 1.879,06</span>
+              <span class="pix-off">-6%</span>
+            </div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 1.699,16</span>
+              <span class="cupom-note">10% OFF</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/smart-tv-philips-50-4k-50pug7300-comando-de-voz-bluetooth/p/MLB57723340" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 55'' -->
+  <div class="section">
+    <div class="section-header">
+      <span class="inch-badge">55''</span>
+      <span class="count">4 produtos</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_736910-MLA96192996678_102025-O.webp" alt="LG 55 UHD" loading="lazy">
+          <span class="discount-badge">-44%</span>
+          <span class="coupon-badge">CUPOM 5%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Smart TV LG 55'' UHD 4K WebOS 25</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 4.299,00</div>
+            <div class="price-por">R$ 2.599,00 <small>ou 18x de R$ 144,39</small></div>
+            <div class="price-pix">
+              <span class="pix-label">PIX</span>
+              <span class="pix-val">R$ 2.391,08</span>
+              <span class="pix-off">-8%</span>
+            </div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 2.261,08</span>
+              <span class="cupom-note">5% OFF</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/smart-tv-lg-uhd-ai-ua75-55-polegadas-hdr10-pro-processador-7-ai-ger8-webos-25/p/MLB54742419" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_638684-MLA110129945801_042026-O.webp" alt="Samsung 55 QLED" loading="lazy">
+          <span class="discount-badge">-20%</span>
+          <span class="coupon-badge">CUPOM 5%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Samsung Vision AI 55'' QLED 4K 2025</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 3.299,00</div>
+            <div class="price-por">R$ 2.619,00 <small>ou 18x de R$ 145,50</small></div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 2.488,05</span>
+              <span class="cupom-note">5% OFF</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/samsung-vision-ai-tv-55-qled-ultra-4k-qef1-2025/p/MLB48957045" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_954933-MLB110513480425_042026-O.webp" alt="TCL 55 Mini LED" loading="lazy">
+          <span class="coupon-badge">CUPOM 10%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Smart TV TCL 55'' QLED Mini LED 4K 144Hz Google TV</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 3.599,00</div>
+            <div class="price-por">R$ 3.599,00 <small>ou 24x de R$ 149,96</small></div>
+            <div class="price-pix">
+              <span class="pix-label">PIX</span>
+              <span class="pix-val">R$ 3.491,03</span>
+              <span class="pix-off">-3%</span>
+            </div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 3.191,03</span>
+              <span class="cupom-note">10% OFF • lim. R$300</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/smart-tv-tcl-55-polegadas-qled-mini-led-4k-c6k-wifi-bluetooth-google-tv-4-hdmi-144hz-hdr10-55c6k/p/MLB48808732" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_940794-MLA99445674678_112025-O.webp" alt="Samsung 55 OLED" loading="lazy">
+          <span class="coupon-badge">CUPOM 10%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Samsung Vision AI 55'' OLED 4K S85F 2025</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 4.929,00</div>
+            <div class="price-por">R$ 4.929,00 <small>ou 24x de R$ 205,38</small></div>
+            <div class="price-pix">
+              <span class="pix-label">PIX</span>
+              <span class="pix-val">R$ 4.781,13</span>
+              <span class="pix-off">-3%</span>
+            </div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 4.481,13</span>
+              <span class="cupom-note">10% OFF • lim. R$300</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/televiso-samsung-vision-ai-tv-55-oled-4k-s85f-2025/p/MLB54054526" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 55+43 KIT -->
+  <div class="section">
+    <div class="section-header">
+      <span class="inch-badge" style="background:var(--accent2);color:#fff;">📦 KIT</span>
+      <span class="count">55'' + 43''</span>
+    </div>
+    <div class="grid">
+
+      <div class="card kit">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_843938-MLA107883227034_032026-O.webp" alt="Kit Samsung" loading="lazy">
+          <span class="discount-badge" style="background:var(--accent2);">KIT</span>
+          <span class="coupon-badge">CUPOM 5%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Kit Samsung Crystal 4K 55'' + Samsung QLED Full HD 43''</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 3.899,00</div>
+            <div class="price-por">R$ 3.699,00 <small>ou 18x de R$ 205,50</small></div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/tv-samsung-55-crystal-4k--smart-tv-43-qled-full-hd/up/MLBU3900145835" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 58'' -->
+  <div class="section">
+    <div class="section-header">
+      <span class="inch-badge">58''</span>
+      <span class="count">1 produto</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_608335-MLA107763044190_032026-O.webp" alt="Philco 58" loading="lazy">
+          <span class="discount-badge">-42%</span>
+          <span class="coupon-badge">CUPOM 5%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Smart TV Philco 58'' 4K UHD LED Roku TV</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 3.999,00</div>
+            <div class="price-por">R$ 2.499,00 <small>ou 18x de R$ 138,83</small></div>
+            <div class="price-pix">
+              <span class="pix-label">PIX</span>
+              <span class="pix-val">R$ 2.299,08</span>
+              <span class="pix-off">-8%</span>
+            </div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 2.174,08</span>
+              <span class="cupom-note">5% OFF</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/smart-tv-philco-58-p58vik-4k-uhd-led-roku-dolby-audio-wi-fi-hdr10-110220v/p/MLB67275824" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 65'' -->
+  <div class="section">
+    <div class="section-header">
+      <span class="inch-badge">65''</span>
+      <span class="count">2 produtos</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_848609-MLA107587864347_022026-O.webp" alt="LG 65 QNED" loading="lazy">
+          <span class="coupon-badge">CUPOM 10%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Smart TV LG 65'' QNED 4K WebOS 25</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 3.599,00</div>
+            <div class="price-por">R$ 3.599,00 <small>ou 24x de R$ 149,96</small></div>
+            <div class="price-pix">
+              <span class="pix-label">PIX</span>
+              <span class="pix-val">R$ 3.383,06</span>
+              <span class="pix-off">-6%</span>
+            </div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 3.083,06</span>
+              <span class="cupom-note">10% OFF • lim. R$300</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/smart-tv-4k-65-lg-qned73-portal-de-games-processador-ai-7-ger8-4k-super-upscaling-google-cast-integrado-controle-ai-magic-webos-25-modo-esportes-alerta-de-esportes/p/MLB65916404" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_638684-MLA110129945801_042026-O.webp" alt="Philco 65 Mini LED" loading="lazy">
+          <span class="discount-badge">-46%</span>
+          <span class="coupon-badge">CUPOM 5%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Smart TV Philco 65'' QLED Mini LED 4K Google TV</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 6.699,00</div>
+            <div class="price-por">R$ 3.699,00 <small>ou 18x de R$ 205,50</small></div>
+            <div class="price-pix">
+              <span class="pix-label">PIX</span>
+              <span class="pix-val">R$ 3.588,03</span>
+              <span class="pix-off">-3%</span>
+            </div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 3.438,03</span>
+              <span class="cupom-note">5% OFF • lim. R$150</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/smart-tv-philco-65-p65cga-qled-mini-led-quantum-4k-uhd-google-tv-wifi-bluetooth-110220v/p/MLB67689992" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 75'' -->
+  <div class="section">
+    <div class="section-header">
+      <span class="inch-badge">75''</span>
+      <span class="count">4 produtos</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_693897-MLA103757458709_012026-O.webp" alt="TCL 75" loading="lazy">
+          <span class="discount-badge">-23%</span>
+          <span class="coupon-badge">CUPOM 5%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Smart TV TCL 75'' QLED 4K Google TV</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 5.499,00</div>
+            <div class="price-por">R$ 4.422,78 <small>ou 18x de R$ 245,71</small></div>
+            <div class="price-pix">
+              <span class="pix-label">PIX</span>
+              <span class="pix-val">R$ 4.201,64</span>
+              <span class="pix-off">-5%</span>
+            </div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 4.051,64</span>
+              <span class="cupom-note">5% OFF • lim. R$150</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/smart-tv-tcl-75-polegadas-qled-4k-p7k-wifi-bluetooth-google-tv-hdr10-dolby-atmos-dolby-vision-75p7k/p/MLB50109613" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_848609-MLA107587864347_022026-O.webp" alt="LG 75 UHD" loading="lazy">
+          <span class="discount-badge">-11%</span>
+          <span class="coupon-badge">CUPOM 10%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Smart TV LG 75'' UHD 4K WebOS 25</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 4.799,00</div>
+            <div class="price-por">R$ 4.511,06 <small>ou 24x de R$ 187,96</small></div>
+            <div class="price-pix">
+              <span class="pix-label">PIX</span>
+              <span class="pix-val">R$ 4.240,40</span>
+              <span class="pix-off">-6%</span>
+            </div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 3.940,40</span>
+              <span class="cupom-note">10% OFF • lim. R$300</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/smart-tv-lg-uhd-ai-ua85-75-polegadas-hdr10-pro-processador-7-ai-ger-8-webos-25/p/MLB53716233" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_843938-MLA107883227034_032026-O.webp" alt="LG 75 QNED" loading="lazy">
+          <span class="coupon-badge">CUPOM 10%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Smart TV LG 75'' QNED 4K WebOS 25</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 4.939,00</div>
+            <div class="price-por">R$ 4.939,00 <small>ou 24x de R$ 205,79</small></div>
+            <div class="price-pix">
+              <span class="pix-label">PIX</span>
+              <span class="pix-val">R$ 4.642,66</span>
+              <span class="pix-off">-6%</span>
+            </div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 4.342,66</span>
+              <span class="cupom-note">10% OFF • lim. R$300</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/smart-tv-4k-75-lg-qned73-portal-de-games-processador-ai-7-ger8-4k-super-upscaling-google-cast-integrado-controle-ai-magic-webos-25-modo-esportes-alerta-de-esportes/p/MLB65916399" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_736910-MLA96192996678_102025-O.webp" alt="Samsung 75 NEO QLED" loading="lazy">
+          <span class="discount-badge">-32%</span>
+          <span class="coupon-badge">CUPOM 5%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Samsung Vision AI 75'' NEO QLED 4K Mini LED 2025</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 8.999,00</div>
+            <div class="price-por">R$ 6.296,44 <small>ou 18x de R$ 349,80</small></div>
+            <div class="price-pix">
+              <span class="pix-label">PIX</span>
+              <span class="pix-val">R$ 6.107,55</span>
+              <span class="pix-off">-3%</span>
+            </div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 5.957,55</span>
+              <span class="cupom-note">5% OFF • lim. R$150</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/samsung-vision-ai-tv-75-neo-qled-ultra-4k-qn70f-2025-mini-led-processador-com-ai-controle-por-gestos-modo-ai-painel-ate-144hz/p/MLB54140192" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 86'' -->
+  <div class="section">
+    <div class="section-header">
+      <span class="inch-badge">86''</span>
+      <span class="count">1 produto</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_608335-MLA107763044190_032026-O.webp" alt="LG 86 QNED" loading="lazy">
+          <span class="discount-badge">-11%</span>
+          <span class="coupon-badge">CUPOM 10%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">Smart TV LG 86'' QNED 4K WebOS 25</div>
+          <div class="prices">
+            <div class="price-de">De: R$ 7.799,00</div>
+            <div class="price-por">R$ 7.331,06 <small>ou 24x de R$ 305,46</small></div>
+            <div class="price-pix">
+              <span class="pix-label">PIX</span>
+              <span class="pix-val">R$ 6.891,20</span>
+              <span class="pix-off">-6%</span>
+            </div>
+            <div class="price-cupom">
+              <span class="cupom-label">CUPOM</span>
+              <span class="cupom-val">R$ 6.591,20</span>
+              <span class="cupom-note">10% OFF • lim. R$300</span>
+            </div>
+          </div>
+          <a class="btn" href="https://www.mercadolivre.com.br/smart-tv-4k-86-lg-qned73-portal-de-games-processador-ai-7-ger8-4k-super-upscaling-google-cast-integrado-controle-ai-magic-webos-25-modo-esportes-alerta-de-esportes/p/MLB65918252" target="_blank">Ver no Mercado Livre →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>Preços e disponibilidade sujeitos a alteração. Verifique as condições do cupom ao finalizar a compra.<br>
+  Acessar ofertas em <a href="https://www.mercadolivre.com.br" target="_blank">mercadolivre.com.br</a></p>
+</footer>
+
+</body>
+</html>
